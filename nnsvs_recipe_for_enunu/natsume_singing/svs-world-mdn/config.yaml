@@ -8,6 +8,10 @@ spk: "natsumeyuuri"
 # PLEASE CHANGE THE PATH BASED ON YOUR ENVIRONMENT
 db_root: "~/data/Natsume_Singing_DB/"
 
+## time unit of mono-phone label
+# The time unit of mono-phone label is scheduled to be changed from sec to 100ns.
+label_time_unit: "sec"
+
 ## exp tag(for managing experiments)
 tag: "jp_qst_crazy_mono_005-2_enunu_182D"
 ## HTS-style question used for extracting musical/linguistic context from musicxml files
