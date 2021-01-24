@@ -1,0 +1,6 @@
+model_name: ENUNU_おふとんP(RMDN)
+version: 0.0.1
+description: ENUNU用のおふとんP歌声モデル(RMDN)
+image: makura.bmp
+author: おふとんP
+web: https://github.com/oatsu-gh/ENUNU
