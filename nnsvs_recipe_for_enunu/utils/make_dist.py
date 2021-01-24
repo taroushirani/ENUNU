@@ -84,7 +84,8 @@ def copy_model(singer, name_exp, release_dir):
     os.makedirs(f'{release_dir}/exp/{name_exp}/acoustic', exist_ok=True)
     os.makedirs(f'{release_dir}/exp/{name_exp}/duration', exist_ok=True)
     os.makedirs(f'{release_dir}/exp/{name_exp}/timelag', exist_ok=True)
-    list_path_model = glob(f'exp/{name_exp}/*/{latest,best_loss}.pth')
+    list_path_model = f'exp/{name_exp}/*/latest.pth'
+    list_path_model += f'exp/{name_exp}/*/best_loss.pth'    
     list_path_model += glob(f'exp/{name_exp}/**/*.yaml', recursive=True)
 
     print('copying model')
