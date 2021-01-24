@@ -195,7 +195,7 @@ def main():
     copy_extra_files(extra_files_list, release_dir)
     
     archive_file_name = release_name ; ".zip"
-    make_archive(join(dest_dir, archive_file_name), 'zip', root_dir=join(release_dir, ".."))
+    make_archive(join(dest_dir, archive_file_name), 'zip', root_dir=join(release_dir, ".."), verbose=True)
     
 if __name__ == '__main__':
     main()
