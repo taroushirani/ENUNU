@@ -149,17 +149,16 @@ def main():
 
     path_question = nnsvs_config['question_path']
     name_exp = nnsvs_config['tag']
+
     config_dir = 'conf'
     template_dir = join(dirname(__file__), '../_common/template/')
-    
     resource_dir = 'resources'
     
-    print(template_dir)
-#    copy_train_config(config_dir, release_dir)
-#    copy_dictionary(dictionary_dir, release_dir)
-#    copy_question(path_question, release_dir)
-#    copy_scaler(singer, release_dir)
-#    copy_model(singer, name_exp, release_dir)
+    copy_train_config(config_dir, release_dir)
+    copy_dictionary(dictionary_dir, release_dir)
+    copy_question(path_question, release_dir)
+    copy_scaler(singer, release_dir)
+    copy_model(singer, name_exp, release_dir)
 
     copy_resources(resource_dir, release_dir)
 
