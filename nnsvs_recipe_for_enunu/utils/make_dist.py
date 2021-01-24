@@ -133,7 +133,7 @@ def copy_extra_files(extra_files_list, release_dir):
     """
     print('Copying extra files')
     for extra_files_path in tqdm(extra_files_list):
-        copy2(extra_files_path, f'{release_dir}/{basename(extra_files_path)}')
+        copytree(extra_files_path, f'{release_dir}/{basename(extra_files_path)}')
         
 def main():
     """
