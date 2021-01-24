@@ -8,10 +8,24 @@ import sys
 from glob import glob
 import os
 from os.path import basename, dirname, join
-from shutil import copy2, copytree
+from shutil import copy2, copytree, make_archive
 from jinja2 import Environment, FileSystemLoader
 import yaml
 from tqdm import tqdm
+import zipfile
+
+# monkey patch for making zipfile which filenames are encoded with CP932
+# https://scrapbox.io/shimizukawa/Python3%E3%81%A7cp932%E3%81%AAzip%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%9F%E3%81%84
+import unittest.mock
+def _patch_encodeFilenameFlags(self):
+    try:
+        return self.filename.encode('ascii'), self.flag_bits
+    except UnicodeEncodeError:
+        return self.filename.encode('cp932'), self.flag_bits
+   
+zipcp932patch = unittest.mock.patch(
+    'zipfile.ZipInfo._encodeFilenameFlags',
+    _patch_encodeFilenameFlags)
 
 
 def get_parser():
@@ -165,5 +179,8 @@ def main():
     make_install_txt(template_dir, release_dir, description)
     make_character_txt(template_dir, release_dir, release_name, image, author, web)
 
+    archive_file_name = release_name ; ".zip"
+    make_archive(archive_file_name, 'zip', root_dir=join(release_dir, ".."))
+    
 if __name__ == '__main__':
     main()
