@@ -35,6 +35,7 @@ def get_parser():
     )
     parser.add_argument("nnsvs_config", type=str, help="NNSVS config file")
     parser.add_argument("dist_config", type=str, help="Disbribution config file")
+    parser.add_argument("dest_dir", type=str, help="Destination directory")    
     return parser
 
 def copy_train_config(config_dir, release_dir):
@@ -125,6 +126,14 @@ def make_character_txt(template_dir, release_dir, release_name, image, author, w
     print('Making character.txt')    
     with open(install_txt_path, 'w', encoding=encoding, newline=newline) as f:
         f.write(txt)
+
+def copy_extra_files(extra_files_list, release_dir):
+    """
+    Copy extra files
+    """
+    print('Copying extra files')
+    for extra_files_path in tqdm(extra_files_list):
+        copy2(extra_files_path, f'{release_dir}/{basename(extra_files_path)}')
         
 def main():
     """
@@ -134,7 +143,8 @@ def main():
     args = get_parser().parse_args(sys.argv[1:])
     nnsvs_config_path=args.nnsvs_config
     dist_config_path=args.dist_config
-
+    dest_dir=args.dest_dir
+    
     nnsvs_config = None
     with open(nnsvs_config_path, 'r', encoding="UTF-8") as f:
         nnsvs_config = yaml.load(f, Loader=yaml.FullLoader)
@@ -163,10 +173,12 @@ def main():
 
     path_question = nnsvs_config['question_path']
     name_exp = nnsvs_config['tag']
-
+    extra_files_list = dist_config['extra_files_list']
+    
     config_dir = 'conf'
     template_dir = join(dirname(__file__), '../_common/template/')
     resource_dir = 'resources'
+
     
     copy_train_config(config_dir, release_dir)
     copy_dictionary(dictionary_dir, release_dir)
@@ -179,8 +191,10 @@ def main():
     make_install_txt(template_dir, release_dir, description)
     make_character_txt(template_dir, release_dir, release_name, image, author, web)
 
+    copy_extra_files(extra_files_list, release_dir)
+    
     archive_file_name = release_name ; ".zip"
-    make_archive(archive_file_name, 'zip', root_dir=join(release_dir, ".."))
+    make_archive(join(dest_dir, archive_file_name), 'zip', root_dir=join(release_dir, ".."))
     
 if __name__ == '__main__':
     main()

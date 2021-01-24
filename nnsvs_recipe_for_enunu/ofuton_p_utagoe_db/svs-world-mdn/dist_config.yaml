@@ -1,6 +1,8 @@
+# coding: utf-8
 model_name: ENUNU_おふとんP(RMDN)
 version: 0.0.1
 description: ENUNU用のおふとんP歌声モデル(RMDN)
 image: makura.bmp
 author: おふとんP
 web: https://github.com/oatsu-gh/ENUNU
+extra_files_list: ["~/data/content/gdrive/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/通常","/content/gdrive/r73_normal_tan0151lite/波音リツ単独音Ver1.5.1Lite/おまけ"]
