@@ -53,7 +53,7 @@ timelag_allowed_range_rest: [-40, 39]
 # Audio sampling rate
 # CAUTION: Changing sample_rate may affect the dimension number of acoustic features.
 # DO NOT CHANGE this unless you know the relationship between the dim of bap and sample_rate.
-sample_rate: 96000
+sample_rate: 48000
 
 ###########################################################
 #                FEATURE EXTRACTION SETTING               #

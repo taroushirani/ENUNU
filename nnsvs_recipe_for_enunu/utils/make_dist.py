@@ -190,11 +190,11 @@ def main():
     copy_resources(resource_dir, release_dir)
 
     make_install_txt(template_dir, release_dir, description)
-    make_character_txt(template_dir, release_dir, release_name.sub(/_/, ' '), image, author, web)
+    make_character_txt(template_dir, release_dir, release_name.replace('_', ' '), image, author, web)
 
     copy_extra_files(extra_files_list, release_dir)
     
-    archive_file_name = release_name ; ".zip"
+#    archive_file_name = release_name ; ".zip"
 #    make_archive(join(dest_dir, archive_file_name), 'zip', root_dir=join(release_dir, ".."))
     
 if __name__ == '__main__':

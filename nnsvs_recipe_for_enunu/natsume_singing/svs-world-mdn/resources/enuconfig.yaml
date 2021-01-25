@@ -21,7 +21,7 @@ defaults:
 verbose:                  100
 
 # Setting for output WAV file.
-sample_rate:              96000
+sample_rate:              48000
 gain_normalize:           true
 
 # How was the model trained.

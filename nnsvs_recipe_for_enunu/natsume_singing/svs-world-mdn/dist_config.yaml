@@ -1,6 +1,6 @@
-model_name: ENUNU_夏目悠李
+model_name: ENUNU_夏目悠李_RMDN
 version: 0.0.1
-description: ENUNU用の夏目悠李歌声モデル
+description: ENUNU用の夏目悠李歌声モデル(RMDN)
 image: natsumeyuuri.bmp
 author: アマノケイ
 web: https://github.com/taroushirani/ENUNU
