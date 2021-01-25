@@ -42,8 +42,11 @@ Windows 10 / UTAU 0.4.18 / ENUNU 0.0.3
 
 【歌声モデル仕様】
 
-- おふとん P 歌声データベース v1.6 を学習
-- 学習手法:svs-world-mdn
+- おふとん P 歌声データベース v1.6 から学習
+- 使用レシピ: svs-world-mdn
+  - timelag model: FeedForwardNet num_layers 2, hidden_dim 128
+  - duration model: RMDN, num_gaussians 4, num_layers 2, hidden_dim 256
+  - acoustic model: RMDN with mlpg(dim-wise), num_gaussians ,4 num_layers 2, hidden_dim 256
 - 音声ファイル出力: 32bit 整数 / 96kHz
 
 

@@ -39,8 +39,11 @@ Windows 10 / UTAU 0.4.18 / ENUNU 0.0.3
 
 【歌声モデル仕様】
 
-- 夏目悠李/ 男性歌声データベース (2020 年 9 月 2 日版) を学習
-- 学習手法:svs-world-mdn
+- 夏目悠李/ 男性歌声データベース (2020 年 9 月 2 日版) から学習
+- 使用レシピ: svs-world-mdn
+  - timelag model: FeedForwardNet num_layers 2, hidden_dim 128
+  - duration model: RMDN, num_gaussians 4, num_layers 2, hidden_dim 256
+  - acoustic model: RMDN with mlpg(dim-wise), num_gaussians ,4 num_layers 2, hidden_dim 256
 - 音声ファイル出力:24bit 整数 / 48kHz
 
 
