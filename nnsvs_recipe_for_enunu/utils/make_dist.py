@@ -190,7 +190,7 @@ def main():
     copy_resources(resource_dir, release_dir)
 
     make_install_txt(template_dir, release_dir, description)
-    make_character_txt(template_dir, release_dir, release_name, image, author, web)
+    make_character_txt(template_dir, release_dir, release_name.sub(/_/, ' '), image, author, web)
 
     copy_extra_files(extra_files_list, release_dir)
     
