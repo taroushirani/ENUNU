@@ -35,9 +35,9 @@ ground_truth_duration:    false
 
 
 # If not empty, try to search statisics in the directory
-stats_dir:                "dump/natsumeyuuri/norm"
+stats_dir:                "dump/ofuton_p/norm"
 # If not empty, try to search models in the directory
-model_dir:                "exp/natsumeyuuri_jp_qst_crazy_mono_005-2_enunu_182D"
+model_dir:                "exp/ofuton_p_jp_qst_crazy_mono_005-2_enunu_182D"
 
 acoustic:
     question_path:        null
