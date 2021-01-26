@@ -27,7 +27,7 @@ exclude_songs: []
 # This singing voice database contains the unvoiced vowels "I" and "U".
 # To enable the unvoiced vowels, modified version of sinsy dictionary files
 # are needed.
-sinsy_dic: "./dic"
+sinsy_dic: "../../_common/no2/dic/"
 
 ### Data preparation related settings.
 ## Song segmentation by silence durations.
@@ -51,6 +51,10 @@ timelag_allowed_range_rest: [-40, 39]
 # CAUTION: Changing sample_rate may affect the dimension number of acoustic features.
 # DO NOT CHANGE this unless you know the relationship between the dim of bap and sample_rate.
 sample_rate: 96000
+
+
+# Replace all wave data of sil and pau with silent
+force_sil_pau_suppress: true
 
 ###########################################################
 #                FEATURE EXTRACTION SETTING               #
