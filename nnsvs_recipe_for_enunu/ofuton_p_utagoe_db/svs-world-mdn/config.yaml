@@ -54,7 +54,7 @@ sample_rate: 96000
 
 
 # Replace all wave data of sil and pau with silent
-force_sil_pau_suppress: true
+force_sil_pau_suppress: false
 
 ###########################################################
 #                FEATURE EXTRACTION SETTING               #
