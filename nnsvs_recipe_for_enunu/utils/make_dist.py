@@ -51,7 +51,7 @@ def copy_dictionary(dictionary_dir, release_dir):
     Copy *.table, *.conf
     """
     print('copying dictionary')
-    copytree(dictionary_dir, f'{release_dir}/{dictionary_dir}')
+    copytree(dictionary_dir, f'{release_dir}/dic')
 
 
 def copy_question(path_question, release_dir):
