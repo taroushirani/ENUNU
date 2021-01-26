@@ -213,7 +213,7 @@ for base in tqdm(base_files):
 
     if config["force_sil_pau_suppress"]:
         orig_mono_dir = join(config["out_dir"], "mono_label")    
-        lab = hts.load(join(orig_mono_dir, name + ".lab"))
+        lab = hts.load(join(orig_mono_dir, utt_id + ".lab"))
         for i in range(len(lab)):
             if lab.contexts[i] == "sil" or lab.contexts[i] == "pau":
                 start_idx = int(lab.start_times[i] * 1e-7 * config["sample_rate"])
