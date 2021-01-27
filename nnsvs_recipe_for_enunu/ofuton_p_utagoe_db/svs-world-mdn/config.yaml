@@ -7,7 +7,7 @@ spk: "ofuton_p"
 
 ## Directory of Unzipped singing voice database
 # PLEASE CHANGE THE PATH BASED ON YOUR ENVIRONMENT
-db_root: "/mnt/d/NNSVS/db/OfutonP/OFUTON_P_UTAGOE_DB_v1.6_label_fixed_ecodeco"
+db_root: "~/data/OFUTON_P_UTAGOE_DB"
 
 ## exp tag(for managing experiments)
 tag: "jp_qst_crazy_mono_005-2_enunu_182D"
