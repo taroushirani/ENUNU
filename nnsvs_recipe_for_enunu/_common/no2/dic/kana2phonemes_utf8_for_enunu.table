@@ -233,8 +233,8 @@
 ペ p e
 ベ b e
 ヘ h e
-プ p U
-ブ b U
+プ p u
+ブ b u
 フォ f o
 フェ f e
 フィ f i
@@ -287,14 +287,14 @@
 ツェ ts e
 ツィ ts i
 ツァ ts a
-ツ ts U
+ツ ts u
 ッ cl
 ヂ j i
 チョ ch o
 チュ ch u
 チャ ch a
 チェ ch e
-チ ch I
+チ ch i
 ダ d a
 タ t a
 ゾ z o
@@ -304,7 +304,7 @@
 ズィ z i
 ズ z u
 スィ s i
-ス s U
+ス s u
 ジョ j o
 ジュ j u
 ジャ j a
@@ -315,7 +315,7 @@
 シャ sh a
 シェ sh e
 シィ s i
-シ sh I
+シ sh i
 ザ z a
 サ s a
 ゴ g o
@@ -323,7 +323,7 @@
 ゲ g e
 ケ k e
 グ g u
-ク k U
+ク k u
 ギョ gy o
 ギュ gy u
 ギャ gy a
@@ -350,3 +350,8 @@
 ィ i
 ア a
 ァ a
+R pau
+br br
+息 br
+pau pau
+sil sil

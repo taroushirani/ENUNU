@@ -52,9 +52,8 @@ timelag_allowed_range_rest: [-40, 39]
 # DO NOT CHANGE this unless you know the relationship between the dim of bap and sample_rate.
 sample_rate: 96000
 
-
 # Replace all wave data of sil and pau with silent
-force_sil_pau_suppress: false
+force_sil_pau_suppress: true
 
 ###########################################################
 #                FEATURE EXTRACTION SETTING               #

@@ -8,8 +8,9 @@
 # ENUNU用のレシピで学習したモデルかどうか
 trained_for_enunu:        false
 # Table (lyric -> phonemes) file path.
-table_path:               "dic/kana2phonemes_utf8_for_oto2lab.table"
+#table_path:               "dic/kana2phonemes_utf8_for_oto2lab.table"
 #table_path:               "dic/japanese.utf_8.table"
+table_path:               "dic/kana2phonemes_utf8_for_enunu.table"
 # bit depth of output wav file.
 # 32 or 16 (recommended:32)
 bit_depth:                32
