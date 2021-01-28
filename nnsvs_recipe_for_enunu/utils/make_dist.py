@@ -54,13 +54,13 @@ def copy_dictionary(dictionary_dir, release_dir):
     copytree(dictionary_dir, f'{release_dir}/dic')
 
 
-def copy_question(path_question, release_dir):
+def copy_question(question_path, release_dir):
     """
     Copy hed file
     """
     os.makedirs(f'{release_dir}/hed', exist_ok=True)
     print('copying question')
-    copy2(path_question, f'{release_dir}/{path_question}')
+    copy2(question_path, f'{release_dir}/{question_path}')
 
 
 def copy_scaler(singer, release_dir):
@@ -103,7 +103,9 @@ def copy_resources(resource_dir, release_dir):
 
     print('Copying resources')
     for resource_path in tqdm(resource_path_list):
-        copy2(resource_path, f'{release_dir}/{basename(resource_path)}')
+        name = basename(resource_path)
+        if name != "enuconfig.yaml":
+            copy2(resource_path, f'{release_dir}/{name}')
 
         
 def make_install_txt(template_dir, release_dir, description, encoding='CP932', newline="\r\n"):
@@ -128,6 +130,26 @@ def make_character_txt(template_dir, release_dir, release_name, image, author, w
     with open(install_txt_path, 'w', encoding=encoding, newline=newline) as f:
         f.write(txt)
 
+def make_enuconfig(template_dir, release_dir, nnsvs_config):
+    env = Environment(loader=FileSystemLoader(template_dir, encoding='utf8'))
+    tpl = env.get_template('enuconfig.tmpl.yaml')
+    yaml = tpl.render({
+        'question_path': basename(nnsvs_config['question_path']),
+        'spk': nnsvs_config['spk'],
+        'tag': nnsvs_config['tag'],
+        'acoustic_eval_checkpoint': nnsvs_config['acoustic_eval_checkpoint'],
+        'duration_eval_checkpoint': nnsvs_config['duration_eval_checkpoint'],
+        'timelag_eval_checkpoint': nnsvs_config['timelag_eval_checkpoint'],
+        'allowed_range': nnsvs_config['timelag_allowed_range'],
+        'allowed_range_rest': nnsvs_config['timelag_allowed_range_rest']
+    })
+
+    enuconfig_yaml_path=join(release_dir, "character.txt")
+
+    print('Making enuconfig.yaml')    
+    with open(enuconfig_yaml_path, 'w') as f:
+        f.write(yaml)
+        
 def copy_extra_files(extra_files_list, release_dir):
     """
     Copy extra files
@@ -172,7 +194,7 @@ def main():
     release_name= f"{model_name}_v{version}"
     release_dir = f"release/{release_name}"
 
-    path_question = nnsvs_config['question_path']
+    question_path = nnsvs_config['question_path']
     name_exp = nnsvs_config['tag']
     extra_files_list = dist_config['extra_files_list']
     
@@ -183,7 +205,7 @@ def main():
     
     copy_train_config(config_dir, release_dir)
     copy_dictionary(dictionary_dir, release_dir)
-    copy_question(path_question, release_dir)
+    copy_question(question_path, release_dir)
     copy_scaler(singer, release_dir)
     copy_model(singer, name_exp, release_dir)
 
@@ -192,6 +214,8 @@ def main():
     make_install_txt(template_dir, release_dir, description)
     make_character_txt(template_dir, release_dir, release_name.replace('_', ' '), image, author, web)
 
+    make_enuconfig(template_dir, release_dir, nnsvs_config)
+    
     copy_extra_files(extra_files_list, release_dir)
     
 #    archive_file_name = release_name ; ".zip"
