@@ -140,8 +140,8 @@ def make_enuconfig(template_dir, release_dir, nnsvs_config):
         'acoustic_eval_checkpoint': nnsvs_config['acoustic_eval_checkpoint'],
         'duration_eval_checkpoint': nnsvs_config['duration_eval_checkpoint'],
         'timelag_eval_checkpoint': nnsvs_config['timelag_eval_checkpoint'],
-        'allowed_range': nnsvs_config['timelag_allowed_range'],
-        'allowed_range_rest': nnsvs_config['timelag_allowed_range_rest']
+        'timelag_allowed_range': nnsvs_config['timelag_allowed_range'],
+        'timelag_allowed_range_rest': nnsvs_config['timelag_allowed_range_rest']
     })
 
     enuconfig_yaml_path=join(release_dir, "enuconfig.yaml")
