@@ -17,7 +17,7 @@ defaults:
 verbose:                  100
 
 # Setting for output WAV file.
-sample_rate:              96000
+sample_rate:              {{sample_rate}}
 gain_normalize:           true
 
 # How was the model trained.
@@ -40,7 +40,6 @@ acoustic:
     checkpoint:           {{acoustic_eval_checkpoint}}
     in_scaler_path:       null
     out_scaler_path:      null
-    # model_yaml:
     subphone_features:    "coarse_coding"
     relative_f0:          true
     post_filter:          true

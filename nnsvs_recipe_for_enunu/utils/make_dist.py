@@ -137,6 +137,7 @@ def make_enuconfig(template_dir, release_dir, nnsvs_config):
         'question_path': basename(nnsvs_config['question_path']),
         'spk': nnsvs_config['spk'],
         'tag': nnsvs_config['tag'],
+        'sample_rate': nnsvs_config['sample_rate'],
         'acoustic_eval_checkpoint': nnsvs_config['acoustic_eval_checkpoint'],
         'duration_eval_checkpoint': nnsvs_config['duration_eval_checkpoint'],
         'timelag_eval_checkpoint': nnsvs_config['timelag_eval_checkpoint'],
