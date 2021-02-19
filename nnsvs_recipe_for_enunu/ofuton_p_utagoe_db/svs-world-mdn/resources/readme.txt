@@ -1,4 +1,4 @@
-【おふとん P (ENUNU) (RMDN) v0.0.1 】
+【おふとん P (ENUNU) (RMDN) v0.0.2 】
 
 おふとん P 歌声データベース (v1.6) を NNSVS で学習させて,
 UTAU プラグイン「 ENUNU 」から呼び出せるようにした歌声モデルです.
@@ -10,7 +10,7 @@ UTAU エディタ上での採譜および歌詞チェック用に,
 
 【ソフトウェアの対応バージョン】
 
-Windows 10 / UTAU 0.4.18 / ENUNU 0.0.3
+Windows 10 / UTAU 0.4.18 / ENUNU 0.1.0
 
 
 ----------------------------
@@ -48,7 +48,7 @@ Windows 10 / UTAU 0.4.18 / ENUNU 0.0.3
   - duration model: RMDN, num_gaussians 4, num_layers 2, hidden_dim 256
   - acoustic model: RMDN with mlpg(dim-wise), num_gaussians ,4 num_layers 2, hidden_dim 256
 - 音声ファイル出力: 32bit 整数 / 96kHz
-
+- ブレスのノイズを軽減するため, pau/sil を無音化
 
 ----------------------------
 
