@@ -30,7 +30,7 @@ exclude_songs: []
 # This singing voice database contains the unvoiced vowels "I" and "U".
 # To enable the unvoiced vowels, modified version of sinsy dictionary files
 # are needed.
-sinsy_dic: "./dic"
+sinsy_dic: "../../_common/no2/dic/"
 
 ### Data preparation related settings.
 ## Song segmentation by silence durations.
