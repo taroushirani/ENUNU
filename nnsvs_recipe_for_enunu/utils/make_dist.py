@@ -144,7 +144,7 @@ def make_enuconfig(template_dir, release_dir, nnsvs_config):
         'allowed_range_rest': nnsvs_config['timelag_allowed_range_rest']
     })
 
-    enuconfig_yaml_path=join(release_dir, "character.txt")
+    enuconfig_yaml_path=join(release_dir, "enuconfig.yaml")
 
     print('Making enuconfig.yaml')    
     with open(enuconfig_yaml_path, 'w') as f:
