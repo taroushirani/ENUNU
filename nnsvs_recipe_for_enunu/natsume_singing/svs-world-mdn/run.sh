@@ -22,7 +22,7 @@ NNSVS_ROOT=~/nnsvs
 export ENUNU_ROOT=$script_dir/../../..
 #change-----------------------------------------------------------
 NNSVS_COMMON_ROOT=$NNSVS_ROOT/egs/_common/spsvs
-export NO2_ROOT=$NNSVS_ROOT/egs/_common/no2
+export NO2_ROOT=../../_common_no2
 . $NNSVS_ROOT/utils/yaml_parser.sh || exit 1;
 
 eval $(parse_yaml "./config.yaml" "")
