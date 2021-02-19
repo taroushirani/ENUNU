@@ -9,7 +9,7 @@ UTAU エディタ上での採譜および歌詞チェック用に,
 
 【ソフトウェアの対応バージョン】
 
-Windows 10 / UTAU 0.4.18 / ENUNU 0.0.3
+Windows 10 / UTAU 0.4.18 / ENUNU 0.1.0
 
 
 ----------------------------
@@ -45,7 +45,7 @@ Windows 10 / UTAU 0.4.18 / ENUNU 0.0.3
   - duration model: RMDN, num_gaussians 4, num_layers 2, hidden_dim 256
   - acoustic model: RMDN with mlpg(dim-wise), num_gaussians ,4 num_layers 2, hidden_dim 256
 - 音声ファイル出力:24bit 整数 / 48kHz
-
+- ブレスのノイズを軽減するため, pau/sil を無音化
 
 ----------------------------
 
