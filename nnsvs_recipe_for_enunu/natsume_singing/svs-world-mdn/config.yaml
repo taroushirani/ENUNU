@@ -6,7 +6,8 @@ spk: "natsumeyuuri"
 
 ## Directory of Unzipped singing voice database
 # PLEASE CHANGE THE PATH BASED ON YOUR ENVIRONMENT
-db_root: "~/data/Natsume_Singing_DB/"
+#db_root: "~/data/Natsume_Singing_DB/"
+db_root: "~/data/natsume_0309/natsume_0309/"
 
 ## time unit of mono-phone label
 # The time unit of mono-phone label is scheduled to be changed from sec to 100ns.
@@ -23,7 +24,7 @@ question_path: "./hed/jp_qst_crazy_mono_005-2_enunu_182D.hed"
 out_dir: "./data"
 
 ## Songs to be excluded from trainig.
-exclude_songs: []
+exclude_songs: ["53", "54", "55", "56"]
 
 ### Pyinsy related settings.
 ## Sinsy dictionary directory
@@ -56,7 +57,10 @@ timelag_allowed_range_rest: [-40, 39]
 sample_rate: 48000
 
 # Replace all wave data of sil and pau with silent
-force_sil_pau_suppress: true
+force_sil_pau_suppress: False
+
+# Gain normalization
+gain_normalize: False
 
 ###########################################################
 #                FEATURE EXTRACTION SETTING               #

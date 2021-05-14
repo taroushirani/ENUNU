@@ -18,7 +18,7 @@ function xrun () {
 
 script_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 #change-----------------------------------------------------------
-NNSVS_ROOT=~/nnsvs
+NNSVS_ROOT=~/works/notebook/nnsvs_pr/nnsvs
 export ENUNU_ROOT=$script_dir/../../..
 #change-----------------------------------------------------------
 NNSVS_COMMON_ROOT=$NNSVS_ROOT/egs/_common/spsvs
