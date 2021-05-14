@@ -222,7 +222,8 @@ for base in tqdm(base_files):
                 wav[start_idx:end_idx] = 0
     
     # gain normalize
-    wav = wav / wav.max() * 0.99
+    if config["gain_normalize"]:
+        wav = wav / wav.max() * 0.99
     
     seg_idx = 0
     while True:
