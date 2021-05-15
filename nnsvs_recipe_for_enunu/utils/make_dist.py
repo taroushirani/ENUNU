@@ -7,7 +7,7 @@ import argparse
 import sys
 from glob import glob
 import os
-from os.path import basename, dirname, join
+from os.path import basename, dirname, join, expanduser
 from shutil import copy2, copytree, make_archive
 from jinja2 import Environment, FileSystemLoader
 import yaml
@@ -157,7 +157,7 @@ def copy_extra_files(extra_files_list, release_dir):
     """
     print('Copying extra files')
     for extra_files_path in tqdm(extra_files_list):
-        copytree(extra_files_path, f'{release_dir}/{basename(extra_files_path)}')
+        copytree(expanduser(extra_files_path), f'{release_dir}/{basename(extra_files_path)}')
         
 def main():
     """
