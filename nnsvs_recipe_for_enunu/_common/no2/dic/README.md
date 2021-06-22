@@ -3,6 +3,7 @@
 natsume_singing, ofuton_p_utagoe_db, oniku_kurumi_utagoe_db contain the labels for unvoiced vowels as follows;
 
 - Unvoiced "I"
+  - キ k I
   - チ ch I
   - シ sh I
   - ジ j I

@@ -24,7 +24,7 @@ question_path: "./hed/jp_qst_crazy_mono_005-2_enunu_182D.hed"
 out_dir: "./data"
 
 ## Songs to be excluded from trainig.
-exclude_songs: ["53", "54", "55", "56"]
+exclude_songs: ["53", "54", "56"]
 
 ### Pyinsy related settings.
 ## Sinsy dictionary directory
